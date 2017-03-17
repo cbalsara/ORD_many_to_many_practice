@@ -5,7 +5,8 @@ require_relative('../models/customer')
 class TestCustomer < MiniTest::Test
 
   def setup
-    @customer1 = Customer.new(1, 'Tim', 20)
+    customer_info = {'id' => 1, "name" => 'Tim', "funds" => 20}
+    @customer1 = Customer.new(customer_info)
   end 
 
   def test_customer_has_id

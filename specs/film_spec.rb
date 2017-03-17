@@ -1,11 +1,12 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../models/film')
-
 class TestFilm < MiniTest::Test
 
   def setup
-    @film1 = Film.new(10, 'Film Title', 2.50)
+    film_info = { 'id' => 10, 'title' => 'Film Title', 'price' => 2.45 }
+
+    @film1 = Film.new(film_info)
   end 
 
   def test_film_has_id
@@ -17,7 +18,7 @@ class TestFilm < MiniTest::Test
   end 
 
   def test_film_has_price
-    assert_equal(2.50, @film1.price)
+    assert_equal(2.45, @film1.price)
   end 
 
 end 

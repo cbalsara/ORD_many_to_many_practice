@@ -3,11 +3,12 @@ require('minitest/rg')
 require_relative('../models/ticket')
 
 
-
 class TestTicket < MiniTest::Test
 
   def setup
-    @ticket1 = Ticket.new(1, 3, 6)
+    ticket_info = {'id' => 1, 'customer_id' => 3, 'film_id' => 6}
+
+    @ticket1 = Ticket.new(ticket_info)
   end 
 
   def test_ticket_has_id
